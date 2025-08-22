@@ -2,7 +2,8 @@ rootProject.name = "multi-module-practice"
 
 include (
     "spring-api",
-    "support:logging"
+    "support:logging",
+    "storage:db-main"
 )
 
 pluginManagement {
