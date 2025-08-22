@@ -13,9 +13,12 @@ java {
     }
 }
 
+val projectGroup: String by project
+val applicationVersion: String by project
+
 allprojects {
-    group = "project"
-    version = "0.0.1-SNAPSHOT"
+    group = projectGroup
+    version = applicationVersion
 
     repositories {
         mavenCentral()
