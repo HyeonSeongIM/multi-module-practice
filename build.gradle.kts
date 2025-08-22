@@ -2,7 +2,7 @@ plugins {
     kotlin("jvm")
     kotlin("plugin.spring") apply false
     id("org.springframework.boot") apply false
-    id("io.spring.dependency-management") apply false
+    id("io.spring.dependency-management")
 }
 
 description = "multi-module-practice"
@@ -30,6 +30,13 @@ subprojects {
     apply(plugin = "org.jetbrains.kotlin.plugin.spring")
     apply(plugin = "io.spring.dependency-management")
     apply(plugin = "org.springframework.boot")
+
+    dependencyManagement{
+        val springCloudDependenciesVersion: String by project
+        imports {
+            mavenBom("org.springframework.cloud:spring-cloud-dependencies:$springCloudDependenciesVersion")
+        }
+    }
 
     dependencies {
         implementation("com.fasterxml.jackson.module:jackson-module-kotlin")

@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: multi-module-practice
+
+  profiles:
+    active: local
+
+  config:
+    activate:
+      on-profile: local
+
