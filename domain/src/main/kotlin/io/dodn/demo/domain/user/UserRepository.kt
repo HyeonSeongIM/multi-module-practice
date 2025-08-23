@@ -1,4 +1,6 @@
 package io.dodn.demo.domain.user
 
-class UserRepository {
+interface UserRepository {
+    fun add(name: String): Long
+    fun read(id: Long): User?
 }
